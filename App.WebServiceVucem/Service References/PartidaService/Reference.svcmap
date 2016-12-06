@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="060b5a1d-4f1f-4c58-a3b3-d1402a805337" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://www.ventanillaunica.gob.mx/ventanilla-ws-pedimentos/ConsultarPartidaService?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ConsultarPartidaService.wsdl" MetadataType="Wsdl" ID="25711ed6-e6c3-40c9-b380-91782832b8c5" SourceId="1" SourceUrl="https://www.ventanillaunica.gob.mx/ventanilla-ws-pedimentos/ConsultarPartidaService?wsdl" />
+    <MetadataFile FileName="ConsultarPartidaService.xsd" MetadataType="Schema" ID="ee93fa5e-4097-45a8-bcb9-0e4f2af807e2" SourceId="1" SourceUrl="https://www.ventanillaunica.gob.mx/ventanilla-ws-pedimentos/ConsultarPartidaService?xsd=1" />
+    <MetadataFile FileName="ConsultarPartidaService1.xsd" MetadataType="Schema" ID="f01840e1-e09d-46be-9746-505a90cc4253" SourceId="1" SourceUrl="https://www.ventanillaunica.gob.mx/ventanilla-ws-pedimentos/ConsultarPartidaService?xsd=2" />
+    <MetadataFile FileName="ConsultarPartidaService2.xsd" MetadataType="Schema" ID="09fca0db-8896-4d2d-805c-4ac798191b7c" SourceId="1" SourceUrl="https://www.ventanillaunica.gob.mx/ventanilla-ws-pedimentos/ConsultarPartidaService?xsd=3" />
+    <MetadataFile FileName="ConsultarPartidaService3.xsd" MetadataType="Schema" ID="bd77f091-f9ae-41f1-98a6-f2e5940d37b6" SourceId="1" SourceUrl="https://www.ventanillaunica.gob.mx/ventanilla-ws-pedimentos/ConsultarPartidaService?xsd=4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

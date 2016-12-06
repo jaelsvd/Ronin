@@ -1,0 +1,121 @@
+﻿@model  IEnumerable<App.Entities.DataStage>
+
+    @{
+        ViewBag.Title = "DataStage";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+@Styles.Render("~/Content/bootstrap-datepicker.min.css")
+@Scripts.Render("~/Scripts/bootstrap-datepicker.min.js")
+@Scripts.Render("~/Scripts/locales/bootstrap-datepicker.es.min.js")
+
+
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>Zip DataStage</h2>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <form action="@Url.Action("CrearZip","DataStage")" method="get">
+                            <div class="col-lg-5">   
+                                <label>Fecha Inicio</label>                    
+                                    <div class='input-group date' id='datepickerfecha1' >
+                                        <input Type="text" class="form-control text-box single-line" data-val="true" data-val-date="The field FechaInicial must be a date." data-val-required="The FechaInicial field is required." id="FechaInicial" name="FechaInicial" type="text" value="" />
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="FechaInicial" data-valmsg-replace="true"></span>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>                                                   
+                            </div>
+                            <div class="col-lg-5">
+                                <label>Fecha Final</label>   
+                                    <div class='input-group date' id='datepickerfecha2' >
+                                        <input Type="text" class="form-control text-box single-line" data-val="true" data-val-date="The field FechaFinal must be a date." data-val-required="The FechaFinal field is required." id="FechaFinal" name="FechaFinal" type="text" value="" />
+                                        <span class="field-validation-valid text-danger" data-valmsg-for="FechaFinal" data-valmsg-replace="true"></span>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <button class="btn btn-lg btn-success">Generar Zip</button>
+                            </div>
+                            </form> 
+                        </div>
+                    </div>           
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Historial </h5>
+                </div>
+                <div class="ibox-content">
+                    <table class="full-width table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nombre del Archivo</th>
+                                <th>Fecha Inicio</th>
+                                <th>Fecha Final</th>
+                                <th>Fecha Creación</th>
+                                <th>Generado Por</th>
+                                <th>Descargar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                            @foreach(var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @item.NombreArchivo
+                                </td>
+                                <td>
+                                    @item.FechaInicial
+                                </td>
+                                <td>
+                                    @item.FechaFinal
+                                </td>
+                                <td>
+                                   @item.FechaCreacion
+                                </td>
+                                <td>
+                                   @item.NombreCreador
+                                </td>
+                                <td>
+                                  <a href="@item.URLZip"> <i class="fa fa-cloud-download  fa-4x"></i></a> 
+                                </td>
+                            </tr>
+                            }
+                           
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script type="text/javascript">
+            $(function () {
+                $('#datepickerfecha1').datepicker({
+                    format: "mm/dd/yyyy",
+                    language: "es",
+                    orientation: "bottom auto"
+                });
+            });
+
+            $(function () {
+                $('#datepickerfecha2').datepicker({
+                    format: "mm/dd/yyyy",
+                    language: "es",
+                    orientation: "bottom auto"
+                });
+            });
+        </script>

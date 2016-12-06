@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b9391506-61a4-4c03-a2cb-b3f28e987ed0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://www.ventanillaunica.gob.mx/ventanilla-ws-pedimentos/ListarPedimentosService?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ListarPedimentosService.xsd" MetadataType="Schema" ID="8b1f6e70-d65e-4df7-a839-52fbba472335" SourceId="1" SourceUrl="https://www.ventanillaunica.gob.mx/ventanilla-ws-pedimentos/ListarPedimentosService?xsd=2" />
+    <MetadataFile FileName="ListarPedimentosService.wsdl" MetadataType="Wsdl" ID="4d444c2a-4ca2-473f-8d79-dc9665d22a8d" SourceId="1" SourceUrl="https://www.ventanillaunica.gob.mx/ventanilla-ws-pedimentos/ListarPedimentosService?wsdl" />
+    <MetadataFile FileName="ListarPedimentosService1.xsd" MetadataType="Schema" ID="d668740b-b7c7-4bfb-ba14-04768f63fad7" SourceId="1" SourceUrl="https://www.ventanillaunica.gob.mx/ventanilla-ws-pedimentos/ListarPedimentosService?xsd=4" />
+    <MetadataFile FileName="ListarPedimentosService2.xsd" MetadataType="Schema" ID="267a8de5-0a3f-4a5f-a34d-7a0aac7c4732" SourceId="1" SourceUrl="https://www.ventanillaunica.gob.mx/ventanilla-ws-pedimentos/ListarPedimentosService?xsd=1" />
+    <MetadataFile FileName="ListarPedimentosService3.xsd" MetadataType="Schema" ID="0027730a-266e-49b1-9caa-6c2976ebad1a" SourceId="1" SourceUrl="https://www.ventanillaunica.gob.mx/ventanilla-ws-pedimentos/ListarPedimentosService?xsd=3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

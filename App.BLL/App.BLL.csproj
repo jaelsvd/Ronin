@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BB3C48E-7EF6-4786-99F9-90902DA058D5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App.BLL</RootNamespace>
+    <AssemblyName>App.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseBusiness.cs" />
+    <Compile Include="Archivo.cs" />
+    <Compile Include="DashboardBusiness.cs" />
+    <Compile Include="Exceptions\DataStageAlreadyExistException.cs" />
+    <Compile Include="DataStageBusiness.cs" />
+    <Compile Include="Exceptions\IdentificadorAlreadyExistException.cs" />
+    <Compile Include="Exceptions\PartidaAlreadyExistException.cs" />
+    <Compile Include="PartidaBusiness.cs" />
+    <Compile Include="Exceptions\PedimentoAlreadyExistException.cs" />
+    <Compile Include="PedimentoBusiness.cs" />
+    <Compile Include="ListaPedimentoBusiness.cs" />
+    <Compile Include="PedimentoListaBusiness.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Exceptions\TasaAlreadyExistException.cs" />
+    <Compile Include="ReportesBusiness.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Common\App.Common.csproj">
+      <Project>{4f172542-6be4-4273-bf30-e03f7d7c33dc}</Project>
+      <Name>App.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.DAL\App.DAL.csproj">
+      <Project>{b2a1d404-ff29-4629-9ca4-42eb2ed1c37d}</Project>
+      <Name>App.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\APP.Entities\App.Entities.csproj">
+      <Project>{164a06e3-1c8b-49de-8193-93b2fe6a97c7}</Project>
+      <Name>App.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.MarzMember\App.MarzMember.csproj">
+      <Project>{587caff2-4617-4ed0-b5ab-e4c761015eba}</Project>
+      <Name>App.MarzMember</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

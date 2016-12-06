@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://www.ventanillaunica.gob.mx/common/ws/oxml/unidadmedida" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.ventanillaunica.gob.mx/common/ws/oxml/unidadmedida" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="UnidadMedida">
+    <xsd:annotation>
+      <xsd:documentation>Unidad de medida</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="clave">
+        <xsd:annotation>
+          <xsd:documentation>Clave de la unidad de Medida</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="3" />
+            <xsd:whiteSpace value="collapse" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="descripcion">
+        <xsd:annotation>
+          <xsd:documentation>Descripcion de la Unidad de Medida</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="50" />
+            <xsd:whiteSpace value="collapse" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

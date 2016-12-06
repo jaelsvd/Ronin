@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> @ViewBag.Title</title>
+    @*@Styles.Render("~/Content/css")*@
+    @Styles.Render("~/font-awesome/css")
+
+    <!-- ========================== Styles ========================== -->
+    @Styles.Render("~/Content/bootstrap.css")
+    @Styles.Render("~/Content/font-awesome/css/font-awesome.css")
+    @Styles.Render("~/Content/css/plugins/dataTables/datatables.min.css")
+    @Styles.Render("~/Content/css/animate.css")
+    @Styles.Render("~/Content/style.css")
+    @Styles.Render("~/Content/font-awesome/fonts/glyphicons-halflings-regular.ttf")
+    @Styles.Render("~/Content/font-awesome/fonts/glyphicons-halflings-regular.woff")
+    @Styles.Render("~/Content/font-awesome/fonts/glyphicons-halflings-regular.woff2")
+    @Styles.Render("~/Content/iCheck/custom.css")
+    @Styles.Render("~/Content/app.css")
+
+    
+    <!-- ========================== Scripts ========================== -->
+    @Scripts.Render("~/Scripts/Site.js")
+    <!-- Mainly scripts -->
+    @Scripts.Render("~/Scripts/jquery-2.1.1.js")
+    @Scripts.Render("~/Scripts/bootstrap.min.js")
+    @Scripts.Render("~/Scripts/plugins/metisMenu/metisMenu.min.js")
+    @Scripts.Render("~/Scripts/plugins/slimscroll/jquery.slimscroll.min.js")
+    <!--  Data Tables -->
+    @Scripts.Render("~/Scripts/plugins/dataTables/datatables.min.js")
+
+
+</head>
+<body>
+
+    <!-- Wrapper-->
+    <div id="wrapper">
+
+        <!-- Navigation -->
+       @Html.Partial("_Navigation") 
+
+        <!-- Page wraper -->
+        <div id="page-wrapper" class="gray-bg">
+
+            <!-- Top Navbar -->
+            @Html.Partial("_TopNavbar")
+
+            <!-- Main view  -->
+            @RenderBody()
+
+            <!-- Footer -->
+            @Html.Partial("_Footer")
+
+        </div>
+        <!-- End page wrapper-->
+
+    </div>
+    <!-- End wrapper-->
+
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/plugins/metsiMenu")
+    @Scripts.Render("~/plugins/pace")
+    @Scripts.Render("~/plugins/slimScroll")
+    @Scripts.Render("~/bundles/inspinia")
+    @RenderSection("scripts", required: false)*@
+
+    
+    <!-- Flot -->
+    @Scripts.Render("~/Scripts/plugins/flot/jquery.flot.js")
+    @Scripts.Render("~/Scripts/plugins/flot/jquery.flot.resize.js")
+    @Scripts.Render("~/Scripts/plugins/flot/jquery.flot.tooltip.min.js")
+    @Scripts.Render("~/Scripts/plugins/flot/jquery.flot.time.js")
+    @Scripts.Render("~/Scripts/plugins/flot/jquery.flot.pie.js")
+ 
+    <!-- ========================== Scripts ========================== -->
+    <!-- Custom and plugin javascript -->
+    @Scripts.Render("~/Scripts/inspinia.js")
+    @Scripts.Render("~/Scripts/plugins/pace/pace.min.js")
+    <!-- Sparkline -->
+    @Scripts.Render("~/Scripts/plugins/sparkline/jquery.sparkline.min.js")
+    <!-- Peity -->
+    @Scripts.Render("~/Scripts/plugins/peity/jquery.peity.min.js")
+    @Scripts.Render("~/Scripts/plugins/demo/peity-demo.js")
+   
+
+
+
+
+    <!-- Flot demo data 
+    <script src="js/demo/flot-demo.js"></script>
+        -->
+    <!-- Page-Level Scripts -->
+    <script>
+        $(document).ready(function(){
+            $('.dataTables-example').DataTable({
+                pageLength: 25,
+                responsive: true,
+                dom: '<"html5buttons"B>lTfgitp',
+                buttons: [
+                    { extend: 'copy'},
+                    {extend: 'csv'},
+                    {extend: 'excel', title: 'ExampleFile'},
+                    {extend: 'pdf', title: 'ExampleFile'},
+
+                    {extend: 'print',
+                     customize: function (win){
+                            $(win.document.body).addClass('white-bg');
+                            $(win.document.body).css('font-size', '10px');
+
+                            $(win.document.body).find('table')
+                                    .addClass('compact')
+                                    .css('font-size', 'inherit');
+                    }
+                    }
+                ],
+                language: {
+                    "sEmptyTable": "Tabla Vacia",
+                    "sInfo": "_START_ de _END_ en _TOTAL_ Registros",
+                    "sInfoEmpty": "Sin información",
+                    "sInfoFiltered": "(filtrado en _MAX_ registro)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "_MENU_ Registros",
+                    "sLoadingRecords": "Descargando Registros...",
+                    "sProcessing": "Procesando...",
+                    "sSearch": "Buscar",
+                    "sZeroRecords": "Keine EintrÃ¤ge vorhanden.",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sPrevious": "Anterior",
+                        "sNext": "Siguiente",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Habilitado para ordenar la columna en orden ascendiente",
+                        "sSortDescending": ": Habilitado para ordenar la columna descendente"
+                    }
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>

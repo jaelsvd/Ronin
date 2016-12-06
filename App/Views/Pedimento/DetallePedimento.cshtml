@@ -1,0 +1,483 @@
+﻿@model App.Entities.Pedimento
+
+@{
+    ViewBag.Title = "Pedimento Completo";
+}
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Pedimento Completo</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="">Pedimentos</a>
+            </li>
+            <li class="active">
+                <strong>Detalles</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12 col-sm-4">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h2>Detalles de pedimento</h2>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="panel-body">
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <h3>Encabezado</h3>
+                                            <hr />
+                                            <dl class="dl-horizontal">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.NumPedimento)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.NumPedimento)
+                                                </dd>
+
+                                                <dt>
+                                                    Tipo de Operación
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.EncabezadoOpDesc)
+                                                </dd>
+
+                                                <dt>
+                                                    Cve. Pedimento
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.EncabezadoOpClave)
+                                                </dd>
+
+                                                <dt>
+                                                    Régimen
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.EncabezadoOpClave)
+                                                </dd>
+                                                <dt>
+                                                    Destino
+                                                </dt>
+                                                <dd>
+
+                                                </dd>
+                                                <dt>
+                                                    Tipo de Cambio
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.EncabezadoTipoCambio)
+                                                </dd>
+                                                <dt>
+                                                    Peso Bruto
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.EncabezadoPesoBruto)
+                                                </dd>
+                                                <dt>
+                                                    Aduana E/S
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.Aduana)
+                                                </dd>
+                                                </dl>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <h3>Medios de Transporte</h3>
+                                            <dl class="dl-horizontal">
+                                                
+                                                <hr />
+                                                <dt>
+                                                    Arribo Clave
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.EncabezadoMedTranspArriboClave)
+                                                </dd>
+                                                <dt>
+                                                    Salida Clave
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.EncabezadoMedTranspSalClave)
+                                                </dd>
+                                            </dl>
+                                            <dl class="dl-horizontal">
+                                                <hr />
+                                                <dt>
+                                                    Valor Dólares
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.ValorAduanaTotalDolares)
+                                                </dd>
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.ValorAduanaTotal)
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.ValorAduanaTotal)
+                                                </dd>
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.ValorComercialTotal)
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.ValorComercialTotal)
+                                                </dd>
+
+                                            </dl>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <h3>Datos del Importador/Exportador</h3>
+                                            <hr />
+                                            <dl class="dl-horizontal">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.ImpExpRfcImpExp)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.ImpExpRfcImpExp)
+                                                </dd>
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.ImpExpCurpImpExp)
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.ImpExpCurpImpExp)
+                                                </dd>
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.ImpExpRazSocImpExp)
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.ImpExpRazSocImpExp)
+                                                </dd>
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.ImpExpSeguros)
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.ImpExpSeguros)
+                                                </dd>
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.ImpExpFletes)
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.ImpExpFletes)
+                                                </dd>
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.ImpExpEmbalajes)
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.ImpExpEmbalajes)
+                                                </dd>
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.ImpExpIncrementables)
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.ImpExpIncrementables)
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <h3>Domicilio</h3>
+                                            <dl class="dl-horizontal">
+                                                
+                                                <hr />
+
+                                                <dt>
+                                                    Calle
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.ImpExpDomCalle)
+                                                </dd>
+                                                <dt>
+                                                    Número Exterior
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.ImpExpNumDomExterior)
+                                                </dd>
+                                                <dt>
+                                                    Número Interior
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.ImpExpNumDomInterior)
+                                                </dd>
+                                                <dt>
+                                                    Municipio
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.ImpExpDomCdMunicipio)
+                                                </dd>
+                                                <dt>
+                                                    Código Postal
+                                                </dt>
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.ImpExpDomCP)
+                                                </dd>
+                                                @*@foreach (var item in Model.PedimentoImpExpFechas)
+            {
+                <dt>
+                    Fechas
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => item.ImpExpFechasFecha)
+                </dd>
+                <dt>
+                    Fecha Clave
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => item.ImpExpFechasFechaEntradaTipoClave)
+                </dd>
+                <dt>
+                    Fecha Descripción
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => item.ImpExpFechasFechaTipoDesc)
+                </dd>
+            }*@
+
+                                            </dl>
+                                        </div>
+
+                                    </div>
+                                    <hr />
+                                    <dl class="dl-horizontal">
+
+                                        <dt>
+                                            Observaciones
+                                        </dt>
+                                        <dd>
+                                            @Html.DisplayFor(model => Model.ObservacionesPedimento)
+                                        </dd>
+                                        </dl>
+                                    </div>
+                             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            @*@if (Model.TasasPedimento.Any())
+            {*@
+            <div class="row">
+                <div class="col-lg-6">
+                   
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h2>Tasas a nivel pedimento</h2>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="panel-body">
+                                    <dl class="dl-horizontal">
+                                        @foreach (var item in Model.TasasPedimento)
+                                        {
+                                            <dt>
+                                                Tipo de tasa
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(model => item.TasasTipoTasaDesc)
+                                            </dd>
+                                            <dt>
+                                                Tipo de tasa clave
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(model => item.TasasTipoTasaClave)
+                                            </dd>
+                                            <dt>
+                                                Contribución
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(model => item.TasasClaveContribucionDesc)
+                                            </dd>
+                                            <dt>
+                                                Clve. Contribución descripción
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(model => item.TasasClaveContribucionClave)
+                                            </dd>
+                                            <dt>
+                                                Forma pago clave
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(model => item.TasasFormaPagoClave)
+                                            </dd>
+                                            <dt>
+                                                Forma pago desc.
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(model => item.TasasFormaPagoDesc)
+                                            </dd>
+                                            <dt>
+                                                Importe
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(model => item.TasasImporte)
+                                            </dd>
+                                            <dt>
+                                                Tasa aplicable
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(model => item.TasasTasaAplicable)
+                                            </dd>
+                                            <hr />
+                                        }
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                 
+                    
+                </div>
+                <div class="col-lg-6">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h2>Identificadores</h2>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="panel-body">
+                                <dl class="dl-horizontal">
+                                    @foreach (var item in Model.IdentificadoresPedimento)
+                                    {
+                                        <dt>
+                                            Clave de Identificador
+                                        </dt>
+                                        <dd>
+                                            @Html.DisplayFor(modelItem => item.ClaveIdentificadorClave)
+                                        </dd>
+                                            <dt>
+                                                Descripción
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => item.ClaveIdentificadorDesc)
+                                            </dd>
+                                            <dt>
+                                                Complemento 1
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => item.IdentificadorComplemento1)
+                                            </dd>
+                                            <dt>
+                                                Complemento 2
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => item.IdentificadorComplemento2)
+                                            </dd>
+                                            <dt>
+                                                Complemento 2
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => item.IdentificadorComplemento3)
+                                            </dd>
+                                            <hr />
+                                    }
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*}*@
+
+            <div class="row">
+              
+            </div>       
+        </div>
+            <div class="col-md-12 col-sm-4">                        
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h2>@Html.DisplayFor(model => model.CantidadPartidas) Partidas</h2>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="ibox-content">
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table id="tablaPartida" class="table display table-striped table-bordered table-hover ">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        Número de Partida
+                                                    </th>
+                                                    <th>
+                                                        Fracc. Arancelaria
+                                                    </th>
+                                                    <th>
+                                                        Desc. Mercancía
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model.Partida)
+                                                {
+                                                    <tr class="pointer" onclick="location.href='@Url.Action("DetallePartida", "Partida", new { numeroPartida = @Html.DisplayFor(modelItem => item.NumeroPartida ) , pedimentoId = @Html.DisplayFor(modelItem => item.PedimentoId) })'">
+                                                        <td>
+                                                            <a href="@Url.Action("DetallePartida", "Partida",  new { numeroPartida = @Html.DisplayFor(modelItem => item.NumeroPartida ) , pedimentoId = @Html.DisplayFor(modelItem => item.PedimentoId) })">@Html.DisplayFor(modelItem => item.NumeroPartida)</a>
+        
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.FraccionArancelaria)
+                                                        </td>
+                                                        <td>
+                                                            @Html.DisplayFor(modelItem => item.DescMercancia)
+                                                        </td>
+   
+                                                    </tr>
+                                                }
+                                           </tbody>
+                                        </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            <div class="ibox-footer">
+                                <div class="pull-right">
+                                    
+
+                                </div>
+                                <a class="btn btn-info btn-rounded" href="@Url.Action("ListarPartidas", "Partida",new { id = @Html.DisplayFor(modelItem => Model.Id) })">Mas detalles</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+   </div>
+ </div>
+    @*<p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>*@
+
+<script>
+    $(document).ready(function () {
+        $('#tablaPartida').DataTable({
+            "lengthMenu": [[10,20], [10,20]]
+        });
+    });
+</script>

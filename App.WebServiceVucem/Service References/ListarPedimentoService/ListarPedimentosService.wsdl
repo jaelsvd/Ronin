@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:oxml="http://www.ventanillaunica.gob.mx/pedimentos/ws/oxml/listarpedimentos" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.ventanillaunica.gob.mx/ventanilla/pedimentos/ws/service/server/listarpedimentos/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ListarPedimentosService" targetNamespace="http://www.ventanillaunica.gob.mx/ventanilla/pedimentos/ws/service/server/listarpedimentos/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IReceptorService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportRefKeyIdentifier />
+            <sp:MustSupportRefIssuerSerial />
+          </wsp:Policy>
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.ventanillaunica.gob.mx/ventanilla/pedimentos/ws/service/server/listarpedimentos/Imports">
+      <xsd:import schemaLocation="https://www.ventanillaunica.gob.mx:443/ventanilla-ws-pedimentos/ListarPedimentosService?xsd=4" namespace="http://www.ventanillaunica.gob.mx/pedimentos/ws/oxml/listarpedimentos" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarPedimentosPeticion">
+    <wsdl:part name="peticion" element="oxml:consultarPedimentosPeticion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPedimentosRespuesta">
+    <wsdl:part name="respuesta" element="oxml:consultarPedimentosRespuesta" />
+  </wsdl:message>
+  <wsdl:portType name="ListarPedimentosServicePortType">
+    <wsdl:operation name="consultarPedimentos">
+      <wsdl:input message="tns:ConsultarPedimentosPeticion" />
+      <wsdl:output message="tns:ConsultarPedimentosRespuesta" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ListarPedimentosServiceWSEndPoint" type="tns:ListarPedimentosServicePortType">
+    <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#BasicHttpBinding_IReceptorService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="consultarPedimentos">
+      <soap:operation soapAction="http://www.ventanillaunica.gob.mx/ventanilla/ListarPedimentosService/consultarPedimentos" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ListarPedimentosService">
+    <wsdl:port name="ListarPedimentosServiceWSEndPoint" binding="tns:ListarPedimentosServiceWSEndPoint">
+      <soap:address location="https://www.ventanillaunica.gob.mx:8121/ventanilla-ws-pedimentos/ListarPedimentosService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

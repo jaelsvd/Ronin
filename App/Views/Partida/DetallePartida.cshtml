@@ -1,0 +1,394 @@
+﻿@model App.Entities.Partida
+@{
+    ViewBag.Title = "Partida";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-2">
+        <div class="widget style1 navy-bg">
+            <div class="row vertical-align">
+                <div class="col-xs-3">
+                    <i class="fa fa-file-text-o fa-3x"></i>
+                </div>
+                <div class="col-xs-9 text-right">
+                    <h3 class="font-bold">Pedimento @Html.DisplayFor(modelItem => Model.Pedimento.NumPedimento)</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-10 text-center">       
+        <h2>            
+            @if ( Model.NumeroPartida > 1) { 
+        <a class="btn btn-primary btn-lg" href="@Url.Action("DetallePartida", "Partida",new { numeroPartida =  Model.NumeroPartida-1  , pedimentoId = @Html.DisplayFor(modelItem => Model.PedimentoId) })" >
+            <i class="fa fa-arrow-circle-left"></i>
+        </a>  
+            }
+        Partida Número @Html.DisplayFor(model => Model.NumeroPartida) 
+           @if (Model.NumeroPartida != Model.Pedimento.CantidadPartidas) { 
+            <a class="btn btn-primary btn-lg" href="@Url.Action("DetallePartida", "Partida",new { numeroPartida =  Model.NumeroPartida+1  , pedimentoId = @Html.DisplayFor(modelItem => Model.PedimentoId) })">
+            <i class="fa fa-arrow-circle-right"></i>
+        </a>
+           }
+        </h2>     
+    </div>
+
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-3 col-sm-4">
+            <div class="row">
+                <div class="ibox float-e-margins">                    
+                    <div class="ibox-content">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table id="tablaPartida" class="table display table-striped table-bordered table-hover ">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Número de Partida
+                                            </th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       @for (int i = 1; i <= Model.Pedimento.CantidadPartidas; i++)
+                                       {
+                                        <tr class="pointer" onclick="location.href='@Url.Action("DetallePartida", "Partida",new { numeroPartida =  i  , pedimentoId = @Html.DisplayFor(modelItem => Model.PedimentoId) })'">
+                                            <td>
+                                                @i
+                                            </td>
+                                        </tr>
+                                       }
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 col-sm-4">
+         <div class="row">
+             <div class="col-lg-12">
+                 <div class="ibox float-e-margins">
+                     
+                     <div class="ibox-content">
+                         <div class="panel-body">
+                             <dl class="dl-horizontal">
+                                 <dt>
+                                     Patente
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.Pedimento.Patente)
+                                 </dd>
+                                 <dt>
+                                     Sección Aduanera
+                                 </dt>
+                                 <dd>
+                                     @Html.DisplayFor(model => model.Pedimento.EncabezadoAduEntSalidaClave)
+                                 </dd>
+                                 <dt>
+                                     @Html.DisplayNameFor(model => model.FraccionArancelaria)
+                                 </dt>
+                                 <dd>
+                                     @Html.DisplayFor(model => model.FraccionArancelaria)
+                                 </dd>
+                                 <dt>
+                                     Tipo Operación
+                                 </dt>
+                                 <dd>
+                                     @Html.DisplayFor(model => model.Pedimento.EncabezadoOpClave)
+                                 </dd>
+                                 <dt>
+                                     Descripción de Mercancía 
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.DescMercancia)
+                                 </dd>
+
+                                 <dt>
+                                     UMT
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.UnidadMedTarifaClave)
+                                 </dd>
+
+                                 <dt>
+                                     UMT Desc.
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.UnidadMedTarifaDesc)
+                                 </dd>
+
+                                 <dt>
+                                     @Html.DisplayNameFor(model => model.CantidadUnidadMedidaTarifa)
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.CantidadUnidadMedidaTarifa)
+                                 </dd>
+
+                                 <dt>
+                                     UMC
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.UnidadMedComerClave)
+                                 </dd>
+
+                                 <dt>
+                                     UMC Desc.
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.UnidadMedComerDesc)
+                                 </dd>
+
+                                 <dt>
+                                     @Html.DisplayNameFor(model => model.CantidadUnidadMedidaComercial)
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.CantidadUnidadMedidaComercial)
+                                 </dd>
+
+                                 <dt>
+                                     @Html.DisplayNameFor(model => model.PrecioUnitaro)
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.PrecioUnitaro)
+                                 </dd>
+
+                                 <dt>
+                                     @Html.DisplayNameFor(model => model.ValorComercial)
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.ValorComercial)
+                                 </dd>
+
+                                 <dt>
+                                     @Html.DisplayNameFor(model => model.ValorAduana)
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.ValorAduana)
+                                 </dd>
+
+                                 <dt>
+                                     Valor Dólares
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.ValorDolares)
+                                 </dd>
+
+                                 <dt>
+                                     @Html.DisplayNameFor(model => model.ValorAgregado)
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.ValorAgregado)
+                                 </dd>
+
+                                 <dt>
+                                     Método Valor Desc.
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.PartidaMetodoValoracion.FirstOrDefault().MetodoValorDesc)
+                                 </dd>
+
+                                 <dt>
+                                     Vinculación Desc.
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.PartidaMetodoValoracion.FirstOrDefault().MetodoValorClave)
+                                 </dd>
+
+                                 <dt>
+                                     País Origen
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.PaisOrigDestClave)
+                                 </dd>                             
+
+                                 <dt>
+                                     País Vend Comp.
+                                 </dt>
+                                 <dd>
+                                     @Html.DisplayFor(model => model.PaisVendCompClave)
+                                 </dd>
+                                 <dt>
+                                     @Html.DisplayNameFor(model => model.ObservacionesDesc)
+                                 </dt>
+
+                                 <dd>
+                                     @Html.DisplayFor(model => model.ObservacionesDesc)
+                                 </dd>
+                             </dl>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4">
+            <div class="row">
+                @if (Model.PartidaGravamen.Any())
+                {
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+
+                            <div class="ibox-content">
+                                <div class="panel-body">
+                                    <h2>Gravámenes</h2>
+                                    <hr />
+                                    <dl class="dl-horizontal">
+                                        @foreach (var item in Model.PartidaGravamen)
+                                        {
+                                            <dt>
+                                                Clave
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(model => item.ClaveGravamenClave)
+                                            </dd>
+                                            <dt>
+                                                Desc. de Gravamen
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(model => item.ClaveGravamenDesc)
+                                            </dd>
+                                            <hr />
+                                        }
+
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                
+
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+
+                        <div class="ibox-content">
+                            <div class="panel-body">
+                                <h2>Tasas</h2>
+                                <hr />
+                                <dl class="dl-horizontal">
+                                    @foreach (var item in Model.PartidaGravamen)
+                                    {
+                                        foreach(var tasa in item.PartidaTasa)
+                                        {
+                                            <dt>
+                                                Tasa Aplicable
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => tasa.TasaAplicable)
+                                            </dd>
+                                            <dt>
+                                                Tasa Clave
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => tasa.TasaClave)
+                                            </dd>
+                                            <dt>
+                                                Tasa Desc.
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(modelItem =>  tasa.TasaDesc)
+                                            </dd>
+                                        }
+
+                                    }
+
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @if (Model.PartidaIdentificador.Any())
+                {
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+
+                            <div class="ibox-content">
+                                <div class="panel-body">
+                                    <h2>Identificadores</h2>
+                                    <hr />
+                                    <dl class="dl-horizontal">
+                                        @foreach (var item in Model.PartidaIdentificador)
+                                        {
+                                            <dt>
+                                                Clave Identificador
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => item.IdentificadorClaveIdentificadorClave)
+                                            </dd>
+                                            <dt>
+                                                Descripción
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => item.IdentificadorClaveIdentificadorDesc)
+                                            </dd>
+                                            <dt>
+                                                Complemento 1
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => item.IdentificadorComplemento1)
+                                            </dd>
+                                            <dt>
+                                                Complemento 2
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => item.IdentificadorComplemento2)
+                                            </dd>
+                                            <dt>
+                                                Complemento 3
+                                            </dt>
+                                            <dd>
+                                                @Html.DisplayFor(modelItem => item.IdentificadorComplemento3)
+                                            </dd>
+
+                                        }
+
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                
+            </div>
+        </div>
+           
+        </div>
+ </div>
+
+<script>
+    $(document).ready(function () {
+        $('#tablaPartida').DataTable({
+            "paging": true,
+            "ordering": false,
+            "info": false,
+            "searching": false,
+            "scrollX": false
+        });
+    });
+</script>

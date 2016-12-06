@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38DAFA64-3FB1-46C7-B3E2-E4B3109BFDE3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App.WebServiceVucem</RootNamespace>
+    <AssemblyName>App.WebServiceVucem</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ListaPedimentoWS.cs" />
+    <Compile Include="PartidaWS.cs" />
+    <Compile Include="PedimentoCompletoWS.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ListarPedimentoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PartidaService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PedimentoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\ListarPedimentoService\App.WebServiceVucem.ListarPedimentoService.consultarPedimentosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ListarPedimentoService\App.WebServiceVucem.ListarPedimentoService.ConsultarPedimentosRespuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ListarPedimentoService\ListarPedimentosService.wsdl" />
+    <None Include="Service References\ListarPedimentoService\ListarPedimentosService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ListarPedimentoService\ListarPedimentosService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ListarPedimentoService\ListarPedimentosService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ListarPedimentoService\ListarPedimentosService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PartidaService\App.WebServiceVucem.PartidaService.consultarPartidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartidaService\App.WebServiceVucem.PartidaService.ConsultarPartidaRespuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartidaService\ConsultarPartidaService.wsdl" />
+    <None Include="Service References\PartidaService\ConsultarPartidaService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PartidaService\ConsultarPartidaService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PartidaService\ConsultarPartidaService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PartidaService\ConsultarPartidaService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PedimentoService\App.WebServiceVucem.PedimentoService.consultarPedimentoCompletoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PedimentoService\App.WebServiceVucem.PedimentoService.ConsultarPedimentoCompletoRespuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PedimentoService\ConsultarPedimentoCompletoService.wsdl" />
+    <None Include="Service References\PedimentoService\ConsultarPedimentoCompletoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PedimentoService\ConsultarPedimentoCompletoService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PedimentoService\ConsultarPedimentoCompletoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PedimentoService\ConsultarPedimentoCompletoService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Common\App.Common.csproj">
+      <Project>{4f172542-6be4-4273-bf30-e03f7d7c33dc}</Project>
+      <Name>App.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.DAL\App.DAL.csproj">
+      <Project>{b2a1d404-ff29-4629-9ca4-42eb2ed1c37d}</Project>
+      <Name>App.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\APP.Entities\App.Entities.csproj">
+      <Project>{164a06e3-1c8b-49de-8193-93b2fe6a97c7}</Project>
+      <Name>App.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.MarzMember\App.MarzMember.csproj">
+      <Project>{587CAFF2-4617-4ED0-B5AB-E4C761015EBA}</Project>
+      <Name>App.MarzMember</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ListarPedimentoService\" />
+    <WCFMetadataStorage Include="Service References\PartidaService\" />
+    <WCFMetadataStorage Include="Service References\PedimentoService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ListarPedimentoService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ListarPedimentoService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ListarPedimentoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PedimentoService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PedimentoService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PedimentoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PartidaService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PartidaService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PartidaService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

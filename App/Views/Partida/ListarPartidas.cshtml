@@ -1,0 +1,113 @@
+﻿@model IEnumerable<App.Entities.Partida>
+@{
+    ViewBag.Title = "Partidas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Partidas</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="">Pedimento Completo</a>
+            </li>
+            <li class="active">
+                <strong>Partidas</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>       
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Número de Partida
+                                    </th>
+                                    <th>
+                                        Patente
+                                    </th>
+                                    <th>
+                                        Aduana
+                                    </th>
+                                    <th>
+                                        Clave
+                                    </th>
+                                    <th>
+                                        Tipo operación
+                                    </th>                                   
+                                    <th>
+                                        Descripción Mercancía
+                                    </th>
+                                    <th>
+                                        Fracción
+                                    </th>
+                                    <th>
+                                        País Origen/Destino
+                                    </th>
+                                    <th>
+                                        Precio Unitario
+                                    </th>
+                                    <th>
+                                        Cant. UMC
+                                    </th>
+                                    <th>
+                                        Cant. UMT
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="pointer" onclick="location.href='@Url.Action("DetallePartida", "Partida",  new { numeroPartida = @Html.DisplayFor(modelItem => item.NumeroPartida ) , pedimentoId = @Html.DisplayFor(modelItem => item.PedimentoId) })'">
+                                        <td>
+                                            <a href="@Url.Action("DetallePartida", "Partida",  new { numeroPartida = @Html.DisplayFor(modelItem => item.NumeroPartida ) , pedimentoId = @Html.DisplayFor(modelItem => item.PedimentoId) })">@Html.DisplayFor(modelItem => item.NumeroPartida)</a>                                          
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Pedimento.Patente)
+                                        </td>
+                                        <td>   
+                                            @Html.DisplayFor(modelItem => item.Pedimento.Aduana)                                        
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Pedimento.EncabezadoClavDocClave)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Pedimento.EncabezadoOpDesc)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DescMercancia)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.FraccionArancelaria)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PaisOrigDestDesc)
+                                        </td>
+                                        <td>
+                                            @string.Format("{0:C}", item.PrecioUnitaro);
+                                        </td>
+                                        <td>
+                                            @string.Format("{0:C}", item.CantidadUnidadMedidaComercial);
+                                        </td>
+                                        <td>
+                                            @string.Format("{0:C}", item.CantidadUnidadMedidaTarifa);
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>                           
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

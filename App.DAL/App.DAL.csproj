@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B2A1D404-FF29-4629-9CA4-42EB2ED1C37D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App.DAL</RootNamespace>
+    <AssemblyName>App.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgenteAduanalRepository.cs" />
+    <Compile Include="Conexion.cs" />
+    <Compile Include="DashboardRepository.cs" />
+    <Compile Include="DataStageRepository.cs" />
+    <Compile Include="ListaPedimentoRepository.cs" />
+    <Compile Include="Migrations\201610051704020_init.cs" />
+    <Compile Include="Migrations\201610051704020_init.Designer.cs">
+      <DependentUpon>201610051704020_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610062322546_campos de error en Pedimento y Partida.cs" />
+    <Compile Include="Migrations\201610062322546_campos de error en Pedimento y Partida.Designer.cs">
+      <DependentUpon>201610062322546_campos de error en Pedimento y Partida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610071937448_relacion ListaPedimento-Pedimento.cs" />
+    <Compile Include="Migrations\201610071937448_relacion ListaPedimento-Pedimento.Designer.cs">
+      <DependentUpon>201610071937448_relacion ListaPedimento-Pedimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610102003412_provedor comprador.cs" />
+    <Compile Include="Migrations\201610102003412_provedor comprador.Designer.cs">
+      <DependentUpon>201610102003412_provedor comprador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610102135256_pais en ProvedorComprador.cs" />
+    <Compile Include="Migrations\201610102135256_pais en ProvedorComprador.Designer.cs">
+      <DependentUpon>201610102135256_pais en ProvedorComprador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610121943017_webservice.cs" />
+    <Compile Include="Migrations\201610121943017_webservice.Designer.cs">
+      <DependentUpon>201610121943017_webservice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610122223104_fechasDelete.cs" />
+    <Compile Include="Migrations\201610122223104_fechasDelete.Designer.cs">
+      <DependentUpon>201610122223104_fechasDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610112033092_datastage.cs" />
+    <Compile Include="Migrations\201610112033092_datastage.Designer.cs">
+      <DependentUpon>201610112033092_datastage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610130049024_x.cs" />
+    <Compile Include="Migrations\201610130049024_x.Designer.cs">
+      <DependentUpon>201610130049024_x.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610131833414_intentos.cs" />
+    <Compile Include="Migrations\201610131833414_intentos.Designer.cs">
+      <DependentUpon>201610131833414_intentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610141557545_patente y aduana en pedimento.cs" />
+    <Compile Include="Migrations\201610141557545_patente y aduana en pedimento.Designer.cs">
+      <DependentUpon>201610141557545_patente y aduana en pedimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610150048540_proveedor-comprador.cs" />
+    <Compile Include="Migrations\201610150048540_proveedor-comprador.Designer.cs">
+      <DependentUpon>201610150048540_proveedor-comprador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610210043324_addtables.cs" />
+    <Compile Include="Migrations\201610210043324_addtables.Designer.cs">
+      <DependentUpon>201610210043324_addtables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610211900214_datetime nulo.cs" />
+    <Compile Include="Migrations\201610211900214_datetime nulo.Designer.cs">
+      <DependentUpon>201610211900214_datetime nulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610281643436_partidafields.cs" />
+    <Compile Include="Migrations\201610281643436_partidafields.Designer.cs">
+      <DependentUpon>201610281643436_partidafields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610281835215_datosVehiculo.cs" />
+    <Compile Include="Migrations\201610281835215_datosVehiculo.Designer.cs">
+      <DependentUpon>201610281835215_datosVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610312003191_difcontribucion.cs" />
+    <Compile Include="Migrations\201610312003191_difcontribucion.Designer.cs">
+      <DependentUpon>201610312003191_difcontribucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610312241579_datastage campos.cs" />
+    <Compile Include="Migrations\201610312241579_datastage campos.Designer.cs">
+      <DependentUpon>201610312241579_datastage campos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611011540226_patente y aduana en listapedimento.cs" />
+    <Compile Include="Migrations\201611011540226_patente y aduana en listapedimento.Designer.cs">
+      <DependentUpon>201611011540226_patente y aduana en listapedimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611011625135_Ds DiferenciaContribucion.cs" />
+    <Compile Include="Migrations\201611011625135_Ds DiferenciaContribucion.Designer.cs">
+      <DependentUpon>201611011625135_Ds DiferenciaContribucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611032149562_entidadValVin.cs" />
+    <Compile Include="Migrations\201611032149562_entidadValVin.Designer.cs">
+      <DependentUpon>201611032149562_entidadValVin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611032209432_vinculacion.cs" />
+    <Compile Include="Migrations\201611032209432_vinculacion.Designer.cs">
+      <DependentUpon>201611032209432_vinculacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611042308556_agenteaduanal.cs" />
+    <Compile Include="Migrations\201611042308556_agenteaduanal.Designer.cs">
+      <DependentUpon>201611042308556_agenteaduanal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611042353199_vinculacion1.cs" />
+    <Compile Include="Migrations\201611042353199_vinculacion1.Designer.cs">
+      <DependentUpon>201611042353199_vinculacion1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611091710203_xc.cs" />
+    <Compile Include="Migrations\201611091710203_xc.Designer.cs">
+      <DependentUpon>201611091710203_xc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PartidaRepository.cs" />
+    <Compile Include="PedimentoRepository.cs" />
+    <Compile Include="PedimentosListaRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportesRepository.cs" />
+    <Compile Include="RoninDBContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Common\App.Common.csproj">
+      <Project>{4f172542-6be4-4273-bf30-e03f7d7c33dc}</Project>
+      <Name>App.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\APP.Entities\App.Entities.csproj">
+      <Project>{164a06e3-1c8b-49de-8193-93b2fe6a97c7}</Project>
+      <Name>App.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.MarzMember\App.MarzMember.csproj">
+      <Project>{587caff2-4617-4ed0-b5ab-e4c761015eba}</Project>
+      <Name>App.MarzMember</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mapping\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610051704020_init.resx">
+      <DependentUpon>201610051704020_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610062322546_campos de error en Pedimento y Partida.resx">
+      <DependentUpon>201610062322546_campos de error en Pedimento y Partida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610071937448_relacion ListaPedimento-Pedimento.resx">
+      <DependentUpon>201610071937448_relacion ListaPedimento-Pedimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610102003412_provedor comprador.resx">
+      <DependentUpon>201610102003412_provedor comprador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610102135256_pais en ProvedorComprador.resx">
+      <DependentUpon>201610102135256_pais en ProvedorComprador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610121943017_webservice.resx">
+      <DependentUpon>201610121943017_webservice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610122223104_fechasDelete.resx">
+      <DependentUpon>201610122223104_fechasDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610112033092_datastage.resx">
+      <DependentUpon>201610112033092_datastage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610130049024_x.resx">
+      <DependentUpon>201610130049024_x.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610131833414_intentos.resx">
+      <DependentUpon>201610131833414_intentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610141557545_patente y aduana en pedimento.resx">
+      <DependentUpon>201610141557545_patente y aduana en pedimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610150048540_proveedor-comprador.resx">
+      <DependentUpon>201610150048540_proveedor-comprador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610210043324_addtables.resx">
+      <DependentUpon>201610210043324_addtables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610211900214_datetime nulo.resx">
+      <DependentUpon>201610211900214_datetime nulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610281643436_partidafields.resx">
+      <DependentUpon>201610281643436_partidafields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610281835215_datosVehiculo.resx">
+      <DependentUpon>201610281835215_datosVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610312003191_difcontribucion.resx">
+      <DependentUpon>201610312003191_difcontribucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610312241579_datastage campos.resx">
+      <DependentUpon>201610312241579_datastage campos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611011540226_patente y aduana en listapedimento.resx">
+      <DependentUpon>201611011540226_patente y aduana en listapedimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611011625135_Ds DiferenciaContribucion.resx">
+      <DependentUpon>201611011625135_Ds DiferenciaContribucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611032149562_entidadValVin.resx">
+      <DependentUpon>201611032149562_entidadValVin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611032209432_vinculacion.resx">
+      <DependentUpon>201611032209432_vinculacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611042308556_agenteaduanal.resx">
+      <DependentUpon>201611042308556_agenteaduanal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611042353199_vinculacion1.resx">
+      <DependentUpon>201611042353199_vinculacion1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611091710203_xc.resx">
+      <DependentUpon>201611091710203_xc.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

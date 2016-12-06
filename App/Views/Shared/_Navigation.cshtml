@@ -1,0 +1,57 @@
+﻿
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="nav-header">
+                <span>
+                   
+                </span>
+                <div class="dropdown profile-element">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        @*<span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">Ejemplo de Usuario</strong>
+                            </span> <span class="text-muted text-xs block">Ejemplo de Menú <b class="caret"></b></span>
+                        </span>*@
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="#">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    DS
+                </div>
+            </li>
+            <li class="">
+                <a href="@Url.Action("Inicio", "Dashboard")"><i class="fa fa-th-large"></i> <span class="nav-label">Inicio</span> </a>
+            </li>
+            <li class="">
+                <a href="@Url.Action("ListarPedimentos", "Pedimento")"><i class="fa fa-file-text-o"></i> <span class="nav-label">Pedimentos</span> </a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-table -o"></i> <span class="nav-label">Reportes </span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="@Url.Action("ResumenPedimento", "Reportes")">Resumen de Pedimentos</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("ResumenPartida", "Reportes")">Resumen de Partidas</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Certificacion", "Reportes")">Porcentaje de Certificación</a>
+                    </li>
+                    <li><a href="@Url.Action("Iva", "Reportes")">Reporte de IVA</a></li>
+                    <li>
+                        <a href="@Url.Action("ImpVSExp", "Reportes")">Análisis Importaciones VS Exportaciones</a>
+                    </li>
+                    @*<li>
+                        <a href="@Url.Action("ReporteFactura", "Reportes")">Facturas COVE Pedimentos</a>
+                    </li>*@
+                </ul>
+            </li>
+            <li class="">
+                <a href="@Url.Action("GenerarDataStage", "DataStage")"><i class="fa fa-folder-o"></i> <span class="nav-label">Zip DataStage</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
